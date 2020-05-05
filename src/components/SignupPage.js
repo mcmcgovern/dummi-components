@@ -13,15 +13,44 @@ const SignupPage = (props) => {
     >
       <h1>Sign up today!</h1>
       <form onSubmit={props.onSubmit}>
+        {/*
         <TextInput
           id="sample"
           label="Sample"
           onChange={props.onChange}
           name="sample"
         />
-        <h3>Main form section</h3>
+      */}
+        <h3>Quick sign up</h3>
+
+        <ul
+          style={{
+            listStyle: "none",
+            display: "flex" /*,
+            justifyContent: "space-around",*/,
+          }}
+        >
+          <li>
+            <input type="radio" name="paytype" />
+            Facebook pay
+          </li>
+          <li>
+            <input type="radio" name="paytype" />
+            Venmo
+          </li>
+        </ul>
+        <TextInput
+          id="payaccount"
+          label="Subsequent placeholder for payment information (I don't know the specifics of venmo api or fbpay at this moment)"
+          onChange={props.onChange}
+          name="payaccount"
+        />
+
+        <input type="checkbox" />
+        <label for="isAnon"> I would like to remain anonymous</label>
 
         <h3>Buttons</h3>
+        <button>Sign up</button>
         <pre>(fb button needs https so localhost won't show it)</pre>
         <div
           class="fb-login-button"
@@ -33,7 +62,9 @@ const SignupPage = (props) => {
           data-width=""
         ></div>
 
-        <h3>More details</h3>
+        <hr />
+
+        <h3>/end quick sign up... More details</h3>
         <h5>Check if true:</h5>
         <ul style={{ listStyle: "none" }}>
           <li>
@@ -62,6 +93,12 @@ const SignupPage = (props) => {
           </li>
         </ul>
         <h5>I need money for:</h5>
+        <TextInput
+          id="reason"
+          label="I need money for:"
+          onChange={props.onChange}
+          name="reason"
+        />
       </form>
     </div>
   );
