@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "../../App.css";
 
 const Header = () => {
   const activeStyle = { color: "lime" };
   return (
-    <nav>
+    <nav className="App-header">
       <NavLink activeStyle={activeStyle} exact to="/">
         Home
       </NavLink>
