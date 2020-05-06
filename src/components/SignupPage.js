@@ -66,30 +66,40 @@ const SignupPage = (props) => {
 
         <h3>/end quick sign up... More details</h3>
         <h5>Check if true:</h5>
-        <ul style={{ listStyle: "none" }}>
+        <ul style={{ listStyle: "none", display: "flex" }}>
           <li>
-            <input type="checkbox" />
+            <input type="radio" name="jobstatus" />
             Unemployed
           </li>
           <li>
-            <input type="checkbox" />
+            <input type="radio" name="jobstatus" />
             Lost Job
           </li>
           <li>
-            <input type="checkbox" />
+            <input type="radio" name="jobstatus" />
             Homeless
           </li>
           <li>
-            <input type="checkbox" />
+            <input type="radio" name="jobstatus" />
+            None of these
+          </li>
+        </ul>
+        <ul id="radio2" style={{ listStyle: "none", display: "none" }}>
+          <li>
+            <input type="radio" name="jobclass" />
             Essential Worker
           </li>
           <li>
-            <input type="checkbox" />
+            <input type="radio" name="jobclass" />
             Medical Staff
           </li>
           <li>
-            <input type="checkbox" />
+            <input type="radio" name="jobclass" />
             Small business owner
+          </li>
+          <li>
+            <input type="radio" name="jobclass" />
+            None of these
           </li>
         </ul>
         <h5>I need money for:</h5>

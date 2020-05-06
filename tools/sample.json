@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "name as given from form input, fb, or anonymous if they would prefer",
+      "profilepic": "url/to/profile/pic... or use a single pic for default",
+      "paytype": "facebook-> save as 1 for smaller data?maybenot?",
+      "payinfo": "@user-handle",
+      "jobclass": "unemployed",
+      "reason": "bills",
+      "mystory": "textarea for a ~breif description of what has happened to them or where they come from",
+      "numadults": 2,
+      "numkids": 1
+    },
+    {
+      "id": 2,
+      "username": "name as given from form input, fb, or anonymous if they would prefer",
+      "profilepic": "url/to/profile/pic... or use a single pic for default",
+      "paytype": "facebook-> save as 1 for smaller data?maybenot?",
+      "payinfo": "@user-handle",
+      "jobclass": "unemployed",
+      "reason": "bills",
+      "mystory": "textarea for a ~breif description of what has happened to them or where they come from",
+      "numadults": 2,
+      "numkids": 1
+    },
+    {
+      "id": 3,
+      "username": "name as given from form input, fb, or anonymous if they would prefer",
+      "profilepic": "url/to/profile/pic... or use a single pic for default",
+      "paytype": "facebook-> save as 1 for smaller data?maybenot?",
+      "payinfo": "@user-handle",
+      "jobclass": "unemployed",
+      "reason": "bills",
+      "mystory": "textarea for a ~breif description of what has happened to them or where they come from",
+      "numadults": 2,
+      "numkids": 1
+    }
+  ]
+}
