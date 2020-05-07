@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../logo.svg";
 
 const MutAidFeed = (props) => {
   const sample = {
@@ -10,7 +11,7 @@ const MutAidFeed = (props) => {
         profilepic: "url/to/profile/pic... or use a single pic for default",
         paytype: "facebook-> save as 1 for smaller data?maybenot?",
         payinfo: "@user-handle",
-        jobclass: "unemployed",
+        jobclass: "Lost Job",
         reason: "bills",
         mystory:
           "textarea for a ~breif description of what has happened to them or where they come from",
@@ -24,12 +25,12 @@ const MutAidFeed = (props) => {
         profilepic: "url/to/profile/pic... or use a single pic for default",
         paytype: "facebook-> save as 1 for smaller data?maybenot?",
         payinfo: "@user-handle",
-        jobclass: "unemployed",
+        jobclass: "Unemployed",
         reason: "bills",
         mystory:
           "textarea for a ~breif description of what has happened to them or where they come from",
-        numadults: 2,
-        numkids: 1,
+        numadults: 1,
+        numkids: 0,
       },
       {
         id: 3,
@@ -38,12 +39,12 @@ const MutAidFeed = (props) => {
         profilepic: "url/to/profile/pic... or use a single pic for default",
         paytype: "facebook-> save as 1 for smaller data?maybenot?",
         payinfo: "@user-handle",
-        jobclass: "unemployed",
-        reason: "bills",
+        jobclass: "Lost Job",
+        reason: "rent",
         mystory:
           "textarea for a ~breif description of what has happened to them or where they come from",
         numadults: 2,
-        numkids: 1,
+        numkids: 5,
       },
       {
         id: 4,
@@ -52,12 +53,12 @@ const MutAidFeed = (props) => {
         profilepic: "url/to/profile/pic... or use a single pic for default",
         paytype: "facebook-> save as 1 for smaller data?maybenot?",
         payinfo: "@user-handle",
-        jobclass: "unemployed",
-        reason: "bills",
+        jobclass: "Homeless",
+        reason: "food",
         mystory:
           "textarea for a ~breif description of what has happened to them or where they come from",
         numadults: 2,
-        numkids: 1,
+        numkids: 3,
       },
       {
         id: 5,
@@ -66,12 +67,12 @@ const MutAidFeed = (props) => {
         profilepic: "url/to/profile/pic... or use a single pic for default",
         paytype: "facebook-> save as 1 for smaller data?maybenot?",
         payinfo: "@user-handle",
-        jobclass: "unemployed",
-        reason: "bills",
+        jobclass: "Lost Job",
+        reason: "medical bills",
         mystory:
           "textarea for a ~breif description of what has happened to them or where they come from",
         numadults: 2,
-        numkids: 1,
+        numkids: 10,
       },
       {
         id: 6,
@@ -80,11 +81,11 @@ const MutAidFeed = (props) => {
         profilepic: "url/to/profile/pic... or use a single pic for default",
         paytype: "facebook-> save as 1 for smaller data?maybenot?",
         payinfo: "@user-handle",
-        jobclass: "unemployed",
-        reason: "bills",
+        jobclass: "Medical Staff",
+        reason: "student loans",
         mystory:
           "textarea for a ~breif description of what has happened to them or where they come from",
-        numadults: 2,
+        numadults: 4,
         numkids: 1,
       },
     ],
@@ -117,10 +118,19 @@ const MutAidFeed = (props) => {
                   <img src={item.profilepic} alt="" />
                   {item.username}
                 </li>
-                <li>{item.numadults} adults</li>
-                <li>{item.numkids} kids</li>
+                <li>
+                  {[...Array(item.numadults)].map((e, i) => (
+                    <img src={logo} alt="" height="70px" />
+                  ))}
+                  {[...Array(item.numkids)].map((e, i) => (
+                    <img src={logo} alt="" height="30px" />
+                  ))}
+                </li>
+                <li>
+                  {item.numadults} adults, {item.numkids} kids
+                </li>
                 <li>I need money for {item.reason}</li>
-                <li>I am a {item.jobclass}</li>
+                <li>{item.jobclass}</li>
                 <li>
                   <button>Doante</button>
                   {item.payinfo}
