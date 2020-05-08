@@ -1,11 +1,13 @@
 // firebase.js
 // contains the Firebase context and provider
-import React, { createContext, useEffect } from "react";
+import React, {
+  createContext, //useEffect
+} from "react";
 import firebaseConfig from "./firebaseConfig";
 import app from "firebase/app";
 import "firebase/database";
-import { useDispatch } from "react-redux"; // this needs to be flux not redux
-import { todoActions } from "../state/todos";
+//import { useDispatch } from "react-redux"; // this needs to be flux not redux
+//import { todoActions } from "../state/todos";
 // we create a React Context, for this to be accessible
 // from a component later
 const FirebaseContext = createContext(null);
@@ -15,7 +17,7 @@ export default ({ children }) => {
     app: null,
     database: null,
   };
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
   // check if firebase app has been initialized previously
   // if not, initialize with the config we saved earlier
   if (!app.apps.length) {
@@ -24,7 +26,8 @@ export default ({ children }) => {
       app: app,
       database: app.database(),
       api: {
-        getTodos,
+        // api appears to have a function for each table that is to be retrieved from firebase and made accessible through the rest of the app
+        getTodos, // getUsers?
       },
     };
   }
@@ -32,6 +35,7 @@ export default ({ children }) => {
   // fire a Redux action to update the items in real-time
   function getTodos() {
     firebase.database.ref("todos").on("value", (snapshot) => {
+      // replace todos with users, or whichever table name
       const vals = snapshot.val();
       let _records = [];
       for (var key in vals) {
@@ -42,7 +46,7 @@ export default ({ children }) => {
       }
       // setTodos is a Redux action that would update the todo store
       // to the _records payload
-      dispatch(setTodos(_records));
+      //dispatch(setTodos(_records));    commented to increase visibility of current errors (if any)
     });
   }
   return (
